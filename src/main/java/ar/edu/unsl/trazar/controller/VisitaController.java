@@ -35,8 +35,8 @@ public class VisitaController {
 	}
 	
 	
-	// el formato de la URL es <url base>/visita/persona/{personId}?dateFrom=<fecha1>&dateTo=<fecha2>
-	@RequestMapping(value = "/persona/{personaId}", method = RequestMethod.GET)
+	// el formato de la URL es <url base>/visita/persona/{personId}/date?dateFrom=<fecha1>&dateTo=<fecha2>
+	@RequestMapping(value = "/persona/{personaId}/date", method = RequestMethod.GET)
 	public List<Visita> getVisitaByPersonaIdAndDate(
 			@PathVariable("personaId") Integer personaId,
 			@RequestParam(name = "dateFrom", required = true) @DateTimeFormat(pattern = "dd-MM-yyyy") Date dateFrom,

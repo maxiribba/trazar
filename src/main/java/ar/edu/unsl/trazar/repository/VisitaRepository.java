@@ -17,7 +17,7 @@ public interface VisitaRepository extends JpaRepository<Visita, Integer> {
 	@Query("SELECT v.local FROM Visita v WHERE v.persona.id = :personaId")
 	List<Local> findLocalByPersonaId(@Param("personaId") Integer personaId);
 	
-	@Query("SELECT v FROM Visita v WHERE v.persona.id = :personaId AND v.date BETWEEN :dateFrom AND :dateTo")
+	@Query("SELECT v FROM Visita v WHERE v.persona.id = :personaId AND v.fecha BETWEEN :dateFrom AND :dateTo")
 	List<Visita> findVisitaByPersonaIdAndDate(@Param("personaId") Integer personaId, @Param("dateFrom") Date dateFrom, @Param("dateTo") Date dateTo);
 
 }
